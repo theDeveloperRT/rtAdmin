@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RT Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2>RT ADMIN</h2>
+    <div class="list" id="busList">
+        <!-- <li>
+            <div class="left">
+                <p>17H</p>
+                <p>219</p>
+            </div>
+            <div class="right">
+                <p>Metro Express</p>
+                <p>AP29Z6767 - KG</p>
+            </div>
+        </li> -->
+
+    </div>
+
+    <div class="form hide" id="form">
+        <div class="formContent">
+            <div class="header">
+                <h3>Bus Information</h3>
+                <div class="imageC">
+                    <img src="cancel_Black.png" alt="cancelIcon"
+                        onclick="document.getElementById('form').classList.add('hide')">
+                </div>
+            </div>
+
+            <div class=" info">
+                <div class="row">
+                    <div class="inputField" style="width: 25%;">
+                        <label for="routeNo">Route No</label>
+                        <input type="text" name="routeNo" id="routeNo" autocomplete="off" onblur="autoFillOnRoute(this)"
+                            list="suggestionsList" onfocus="fillSuggestionsList(routesArray)">
+                    </div>
+                    <div class="inputField" style="width: 45%;">
+                        <label for="">Bus No</label>
+                        <input type="text" name="busNo" id="busNo" autocomplete="off" list="suggestionsList"
+                            onfocus="fillSuggestionsList(busDataLocal[0])" onblur="fillDepot(this)">
+                    </div>
+                    <div class="inputField" style="width: 25%;">
+                        <label for="">Depot</label>
+                        <input type="text" name="depot" id="depot" autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="inputField" style="width: 100%;">
+                        <label for="">Route</label>
+                        <div class="customInput">
+                            <input type="text" name="route" id="route" autocomplete="off">
+                            <p onclick="swapRoute()">
+                                <img src="swap.png" alt="swapIcon">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="inputField" style="width: 100%;">
+                        <label for="">Service Type</label>
+                        <input type="text" name="serviceType" id="serviceType" autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="inputField" style="width: 100%;">
+                        <label for="">Current Stop</label>
+                        <input type="text" name="currentStop" id="currentStop" autocomplete="off" list="suggestionsList"
+                            onfocus="fillSuggestionsList(fullNames)">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="inputField" style="width: 100%;">
+                        <label for="">Next Stop</label>
+                        <input type="text" name="nextStop" id="nextStop" autocomplete="off" list="suggestionsList"
+                            onfocus="fillSuggestionsList(fullNames)">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="inputField" style="width: 100%;">
+                        <label for="">Occupancy</label>
+                        <input type="text" name="occupancy" id="occupancy" autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="inputField" style="width: 100%;">
+                        <label for="">Status</label>
+                        <input type="text" name="status" id="status" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+
+            <div class="actionButtons">
+                <button style="border: 2px solid red; color: red; background-color: white;" id="del_btn"
+                    onclick="deleteBus()">DELETE</button>
+                <button style="background-color: green; color: white;" id="add_UPD_Btn"
+                    onclick="addBusData()">ADD</button>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="circlBtn" onclick="openForm()">
+        <img src="add_white.png" alt="Add_Icon">
+    </div>
+
+    <datalist id="suggestionsList">
+
+    </datalist>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

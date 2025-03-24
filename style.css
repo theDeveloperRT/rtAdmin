@@ -1,0 +1,262 @@
+:root {
+    --primaryColor: #151A2D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    width: 100%;
+    background-color: var(--primaryColor);
+    text-align: center;
+    padding: 15px 0px;
+    color: white;
+}
+
+.list {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list li {
+    list-style-type: none;
+    height: 80px;
+    width: 95%;
+    background-color: var(--primaryColor);
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.list li .left {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 22px;
+    color: yellow;
+    border-right: solid 2px gray;
+    text-transform: uppercase;
+}
+
+.list li .left p {
+    padding: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.list li .left p:nth-child(2) {
+    border-top: solid 2px white;
+}
+
+.list li .right {
+    padding-left: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.list li .right p {
+    padding: 2px;
+}
+
+.list li .right p:nth-child(2) {
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.form .formContent {
+    width: 90%;
+    height: 75%;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.form .formContent .header {
+    width: 100%;
+    background-color: var(--primaryColor);
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.form .formContent .header h3 {
+    width: 75%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+.form .formContent .header .imageC {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    padding-right: 10px;
+}
+
+.form .formContent .header .imageC img {
+    width: 30px;
+    opacity: 0.7;
+    filter: invert();
+}
+
+.form .formContent .info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100%-20px);
+    padding-top: 0px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.row .inputField {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.row .inputField label {
+    font-size: 12px;
+    width: 100%;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.row .inputField input {
+    width: 100%;
+    height: 20px;
+    outline: none;
+    border: none;
+    border-bottom: solid 2px black;
+    font-size: 16px;
+}
+
+.row .inputField .customInput {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.row .inputField .customInput input {
+    width: 85%;
+}
+
+.row .inputField .customInput p {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+
+.row .inputField .customInput p img {
+    height: 25px;
+}
+
+.form .formContent .actionButtons {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 4px;
+}
+
+.form .formContent .actionButtons button {
+    outline: none;
+    border: none;
+    width: 47%;
+    text-align: center;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.circlBtn {
+    background-color: var(--primaryColor);
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px black;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.circlBtn img {
+    height: 75px;
+    opacity: 0.8;
+}
+
+.hide {
+    display: none;
+}
