@@ -74,8 +74,14 @@
                 <div class="row">
                     <div class="inputField" style="width: 100%;">
                         <label for="">Current Stop</label>
-                        <input type="text" name="currentStop" id="currentStop" autocomplete="off" list="suggestionsList"
-                            onfocus="fillSuggestionsList(fullNames)">
+                        <div class="customInput">
+                            <input type="text" name="currentStop" id="currentStop" autocomplete="off"
+                                list="suggestionsList" onfocus="fillSuggestionsList(fullRouteG)"
+                                onchange="changeStopNumber()">
+                            <p onclick="nextStopUpdate()">
+                                <img src="up.png" alt="swapIcon">
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -83,21 +89,22 @@
                     <div class="inputField" style="width: 100%;">
                         <label for="">Next Stop</label>
                         <input type="text" name="nextStop" id="nextStop" autocomplete="off" list="suggestionsList"
-                            onfocus="fillSuggestionsList(fullNames)">
+                            onfocus="fillSuggestionsList(fullRouteG)">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="inputField" style="width: 100%;">
                         <label for="">Occupancy</label>
-                        <input type="text" name="occupancy" id="occupancy" autocomplete="off">
+                        <input type="text" name="occupancy" id="occupancy" autocomplete="off" list="suggestionsList"
+                            onfocus="fillSuggestionsList(occupancyAutoFill)">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="inputField" style="width: 100%;">
                         <label for="">Status</label>
-                        <input type="text" name="status" id="status" autocomplete="off">
+                        <input type="text" name="status" id="status" autocomplete="off" onblur="modifyStatus(this)">
                     </div>
                 </div>
             </div>
