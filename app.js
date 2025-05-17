@@ -15053,7 +15053,8 @@ function returnFullRoute(route) {
 
 function modifyStatus(ref) {
     let time = getTimeNow();
-    if (ref.value == "Left" || ref.value == "left") {
+    let refValue = ref.value.toLowerCase();
+    if (refValue == "left") {
         ref.value = "Left " + shdLower[SHD.indexOf(getId("currentStop").value)] + " @ " + time;
     }
 }
