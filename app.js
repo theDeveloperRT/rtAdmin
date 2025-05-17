@@ -8,7 +8,9 @@ let busDataLocal = [
 
 let occupancyAutoFill = ["More than 4 seats are available", "Bus is full", "Standing space is available", "Only 1 seat left", "Less than 4 seats available", "Few seats left", "Bus is almost empty", "Bus is moderately crowded", "The bus is overcrowded", "No standing space available", "No seats, standing only."]
 
-let starting, destination;
+let starting, destination, fullRouteG, routeNumber;
+let direction = 0;
+let stopNumber = 0;
 
 let DetailedRoutesUP = [
     // 1 SERIES
@@ -14910,6 +14912,17 @@ function openFormUP(ref) {
 
     getId('add_UPD_Btn').innerHTML = "UPDATE";
 
+    routeNumber = routeNo.value;
+    starting = setRoute(routeNumber)[0];
+    destination = setRoute(routeNumber)[1];
+    if (getId('route').value == starting + " - " + destination) {
+        direction = 0;
+    } else {
+        direction = 1;
+    }
+
+    fullRouteG = returnFullRoute(routeNumber);
+    stopNumber = fullRouteG.indexOf(getId('currentStop').value);
 }
 
 function addBusData() {
@@ -14941,8 +14954,10 @@ function addBusData() {
             getId('form').classList.add('hide');
             if (getId('add_UPD_Btn').innerHTML == "UPDATE") {
                 alert("Bus data Updated successfully!");
+
             } else {
                 alert("Bus data added successfully!");
+
             }
         })
         .catch((error) => {
@@ -14982,10 +14997,6 @@ function openForm() {
 
 }
 
-let direction = 0;
-let stopNumber = 0;
-let fullRouteG;
-let routeNumber;
 function autoFillOnRoute(ref) {
     routeNumber = ref.value;
     starting = setRoute(routeNumber)[0];
@@ -15119,6 +15130,3 @@ function ReturnIndex(routeArray, route) {
     }
     return -1;
 }
-
-
-
